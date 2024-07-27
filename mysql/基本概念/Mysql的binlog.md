@@ -4,7 +4,7 @@ BinLog是mysql服务层日志文件,默认在**事务提交**前同步到磁盘(
 
 > ​	默认保存在/var/lib/mysql/binlog.xxxx文件
 >
-> ​    mysql的数据文件保存在/var/lib/mysql/database-name/table-name文件中,包含**数据**和**表结构**以及**索引**
+> ​    Mysql的数据文件保存在/var/lib/mysql/database-name/table-name文件中,包含**数据**和**表结构**以及**索引**
 >
 > 
 
