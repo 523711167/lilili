@@ -1,0 +1,3 @@
+SpringBean生命周期
+
+​	首先读取Xml、@Configuration,解析注解和Xml成BeanDefinition对象，包含bean的属性信息，比如bean名称，bean全限定类名,bean作用域等等，BeanFactory根据BeanDefinition信息实例化Bean对象，判断Bean对象是否是各类Aware的子类，强转对应类型，调用Aware接口方法，执行定义初始化方法，比如InitializingBean、init-method方法,最后销毁的时候执行destory方法。
