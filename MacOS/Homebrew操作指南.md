@@ -1,6 +1,10 @@
-# Homebrew说明
+# Homebrew操作指南
 
-##### 源文件下载目录
+
+
+## FAQ
+
+###### 源文件下载目录
 
 ​	root下载：/Library/Caches/Homebrew
 
