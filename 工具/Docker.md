@@ -30,7 +30,7 @@
 >
 > "https-proxy": "http://192.168.18.115:7890" 代理选择的是http，选择https有问题。
 
-###### /lib/systemd/system/docker.service文件
+###### /lib/systemd/system/docker.service文件说明
 
 ​	👀 **systemd** 服务管理系统中的一个服务单元文件，用于定义和管理 **Docker** 服务的启动、停止和其他操作。
 
@@ -48,10 +48,42 @@ docker pull roboxes/centos8:latest --platform amd64
 docker images -q --filter "dangling=true" | xargs -I {} docker rmi {}
 ```
 
-###### 指定docker客户端连接的守护进程
+###### docker客户端连接的守护进程
 
 ```
 # 指定DOCKER_HOST变量
 export DOCKER_HOST="tcp://192.168.18.124:2375"
 ```
 
+###### 宿主机向容器拷贝文件
+
+```
+# 宿主机source拷贝到容器/目录 
+docker cp source target:/
+```
+
+###### 容器打包成镜像
+
+```
+docker commit 容器ID 镜像:版本
+```
+
+###### entrypoint和command区别
+
+- entryporint 默认不可覆盖
+
+- command   entrypoint存在，command作为参数补充，反之，作为命令执行。
+
+  > [!CAUTION]
+  >
+  > dockerfile和docker-compose都有对应的entrypoint和command，docker-compose优先级大于dockerfile，比如
+  >
+  > FROM ubuntu
+  >
+  > ENTRYPOINT ["echo"]
+  >
+  > CMD ["hello world"]  会被entrypiont ["ls"] command ["-l"]覆盖
+  >
+  > 
+
+  

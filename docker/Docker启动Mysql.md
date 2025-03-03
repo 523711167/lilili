@@ -19,6 +19,12 @@ mysql:latest
 # -e MYSQL_SSL=DISABLED
 ```
 
+> [!CAUTION]
+>
+> 💡 Mysql8版本配置文件/etc/my.cnf在此目录
+
+
+
 ### 启动环节
 
 通过docker下载mysql镜像。

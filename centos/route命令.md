@@ -1,6 +1,6 @@
 # route命令
 
-#### 添加路由
+###### 添加路由
 
 ```shell
 route ADD NET-ID MASK 子网掩码 网关 IF 网卡索引
@@ -9,7 +9,7 @@ route ADD NET-ID MASK 子网掩码 网关 IF 网卡索引
 
 注意：子网掩码=255.255.255.255，指定IP路由。
 
-#### 删除路由
+###### 删除路由
 
 ```
 route delete net-id MASK 子网掩码 网关
