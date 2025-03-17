@@ -26,3 +26,30 @@ fi
 echo "prepare base dir is set to ${harbor_prepare_path}"
 ```
 
+###### 权限赋予问题
+
+```shell
+# -R 表示递归赋予权限
+chmod 777 -R /home
+```
+
+###### systemctl启动查看日志
+
+```shell
+# 显示 Redis 服务的最近 50 行日志
+journalctl -u redis --no-pager -n 50
+```
+
+###### 压缩文件通过排除某些文件夹
+
+```shell
+# ./表示相对目录，取决于你的工作目录 也可以使用/home/xiaoxipeng 解决目录
+tar --exclude='./back-log' \
+    --exclude='/log' \
+    -czvf backup.tar.gz /*
+# -c 表示创建新的归档文件
+# -v 表示显示详细过程
+# -z 使用gzip压缩
+# -f 指定文件名
+```
+
