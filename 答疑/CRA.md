@@ -23,4 +23,7 @@ yarn add node-sass@npm:dart-sass
   }
 ```
 
-警告款：灯 ：配置后 webpack配置的别名使用无效。
+> [!CAUTION]
+>
+> 💡 配置后 webpack配置的别名使用无效。
+

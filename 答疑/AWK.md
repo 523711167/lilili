@@ -21,13 +21,8 @@ awk options 'pattern {action}' file
 
 ​	NF：表示匹配的行号
 
-## TIP
+## FAQ
 
-```shel
-# 环境变量按照：分割后输出
+###### 环境变量按照：分割后输出
+
 echo $PATH | awk -F :  '{for(i=1; i<=NF; i++) print $i}'
-
-```
-
-
-
