@@ -84,6 +84,4 @@ docker commit 容器ID 镜像:版本
   >
   > CMD ["hello world"]  会被entrypiont ["ls"] command ["-l"]覆盖
   >
-  > 
-
   

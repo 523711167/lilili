@@ -53,3 +53,10 @@ tar --exclude='./back-log' \
 # -f 指定文件名
 ```
 
+###### Top命令交互操作
+
+```
+e 改变任务区域单位 bit -> mb -> gb
+E 改变摘要区域单位 bit -> mb -> gb
+```
+
