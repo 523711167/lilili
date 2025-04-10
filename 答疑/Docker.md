@@ -83,5 +83,13 @@ docker commit 容器ID 镜像:版本
   > ENTRYPOINT ["echo"]
   >
   > CMD ["hello world"]  会被entrypiont ["ls"] command ["-l"]覆盖
-  >
-  
+
+###### docker重启
+
+​	Linux环境：
+
+​	MacOS环境：
+
+```shell
+brew services restart docker
+```

@@ -42,5 +42,25 @@ CMD ["redis-server", "/usr/local/etc/redis/redis.conf"]
 >
 > 💡 Dockerfile的指令每执行一次都会在docker上新建一层，所以过多无意义的层，会导致镜像膨胀。
 >
-> 💡 ENTRYPOINT用于容器启动后执行的命令，不会被覆盖，CMD会被覆盖，如果在docker run --name redis_v1 redis:v1 ls，ls命令会覆盖cmd中的命令。
+> 💡 CMD和ENTRYPOINT分EXEC和SHELL两种格式，EXEC格式为 ["echo", "Hello World"], SHELL格式 echo Hello World
+
+> [!CAUTION]
+>
+> 💡**CMD和ENTRYPONIT单独使用**
+>
+> ​     CMD可以被替换的，docker run imageId echo helloworld，会替换dockerfile定义的CMD命令。
+>
+> ​     ENTRYPONIT是不可被替换的，除非传递--entrypoint printenv，使用printenv重写命令。
+
+> [!CAUTION]
+>
+> 💡  **CMD和ENTRYPONIT混合使用**
+>
+> ​       当混合使用的时候，确保使用的都是EXEC格式
+>
+> ​       ENTRYPOINT ["echo", "HelloWorld"]
+>
+> ​       CMD ["wellcome xiaoxipeng "]
+>
+> ​       ENTRYPOINT作为instructions，CMD作为parameter，CMD可以被docker run传递的参数所改变,如果CMD中含有多个参数，	       docker run传递一个参数也会覆盖CMD中的多个参数。
 

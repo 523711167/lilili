@@ -22,6 +22,8 @@ mysql:latest
 > [!CAUTION]
 >
 > 💡 Mysql8版本配置文件/etc/my.cnf在此目录
+>
+>  💡环境变量区分大小的
 
 
 
