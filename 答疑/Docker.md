@@ -23,7 +23,13 @@
 	"http-proxy": "http://192.168.18.115:7890",
   "https-proxy": "http://192.168.18.115:7890",
   "no-proxy": "localhost,127.0.0.1"
-}
+},
+# 当docker守护进程重启时候，默认会关闭运行的容器,可以通过配置达到守护进程不可用的时候，容器仍然运行,称为实时恢复。
+# 开启后，当docker守护进程重启后，运行的容器不会重新启动
+# 添加完成执行systemctl reload docker.service
+# docker info  | grep -i live 观察是否已开启
+# systemctl restart docker.service 测试是否达到效果
+"live-restore": true
 ```
 
 > [!CAUTION]
@@ -57,9 +63,10 @@ export DOCKER_HOST="tcp://192.168.18.124:2375"
 
 ###### 宿主机向容器拷贝文件
 
-```
+```shell
 # 宿主机source拷贝到容器/目录 
 docker cp source target:/
+# docker cp kibana.yml kibana:/usr/share/kibana/config/kibana.yml
 ```
 
 ###### 容器打包成镜像

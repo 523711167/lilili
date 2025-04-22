@@ -17,6 +17,7 @@ docker run -d --name mysql \
 mysql:latest 
 # mysqld 启动mysql命令
 # -e MYSQL_SSL=DISABLED
+# -v 数据劵做映射的同时，宿主机的文件读写权限需要满足
 ```
 
 > [!CAUTION]

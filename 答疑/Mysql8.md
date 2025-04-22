@@ -69,3 +69,19 @@
 >
 > [1]: https://blog.csdn.net/yangbindxj/article/details/122868100
 
+###### Mysql创建用户流程
+
+```shell
+# mysql 5
+CREATE USER 'user'@'%' IDENTIFIED BY 'user';
+# mysql 8 
+# MySQL 8 默认使用 caching_sha2_password 插件认证，但有些客户端/框架（如某些老版本的 Navicat、JDBC）不支持它
+CREATE USER 'newuser'@'%' IDENTIFIED WITH mysql_native_password BY 'StrongPassword123!';
+# 授权用户
+# 所有权限 在database数据库的所有表 给user用户 允许来自任何IP的网络连接
+GRANT ALL PRIVILEGES ON database.* TO 'user'@'%';
+# 刷新权限
+FLUSH PRIVILEGES;
+
+```
+
