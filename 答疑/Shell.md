@@ -60,3 +60,12 @@ e 改变任务区域单位 bit -> mb -> gb
 E 改变摘要区域单位 bit -> mb -> gb
 ```
 
+###### 启动后台执行的进程
+
+```shell
+# 后台执行，不会输出到控制台，输出到nohup文件中，并且退出当前session不会导致进程终止，
+nohup ping www.baidu.com &
+# 同样会后台执行，但是会直接输出到控制台上，最为关键的是当前session退出，进程自动停止
+ping www.baidu.com &
+```
+
